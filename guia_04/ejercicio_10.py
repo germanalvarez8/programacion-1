@@ -1,22 +1,27 @@
-# Averiguar qué cantidad de letras tiene la palabra más larga y cual es.
+# Determinar cuál es la vocal que aparece con mayor frecuencia.
 
 phrase = "Quiero comer manzanas, solamente manzanas."
 
-splited = phrase.split(' ')
-quantityList = phrase.split(' ')
+vowels = ['a', 'e', 'i', 'o', 'u']
+vowelsQuantity = [0, 0, 0, 0, 0]
 
-for i in range(len(splited)):
-    lenght = len(splited[i])
-
-    if splited[i].find(',') != -1 or splited[i].find('.') != -1:
-        lenght -= 1
-    quantityList[i] = lenght
+for letter in phrase:
+    if letter == 'a':
+        vowelsQuantity[0] += 1
+    elif letter == 'e':
+        vowelsQuantity[1] += 1
+    elif letter == 'i':
+        vowelsQuantity[2] += 1
+    elif letter == 'o':
+        vowelsQuantity[3] += 1
+    elif letter == 'u':
+        vowelsQuantity[4] += 1
 
 maxQuantity = 0
 maxQuantityindex = 0
-for i in range(len(quantityList)):
-    if quantityList[i] > maxQuantity:
-        maxQuantity = quantityList[i]
+for i in range(len(vowels)):
+    if vowelsQuantity[i] > maxQuantity:
+        maxQuantity = vowelsQuantity[i]
         maxQuantityindex = i
 
-print(maxQuantity, splited[maxQuantityindex])
+print(f"The most used vowel is {vowels[maxQuantityindex]}, with {maxQuantity} aparitions")

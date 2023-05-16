@@ -4,7 +4,7 @@ phrase = "Quiero comer manzanas, solamente manzanas."
 count = 0
 
 for letter in phrase:
-    if letter != ' ':
+    if letter != ' ' and letter != ',' and letter != '.':
         count += 1
 
 print(count, len(phrase))
